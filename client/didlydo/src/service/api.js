@@ -29,6 +29,10 @@ export const isAvailable = (e, id) => {
     return api.patch(`/api/events/${id}/attend`, e)
 }
 
+export const editEvent = (e, id) => {
+    return api.patch(`/api/events/${id}/`, e)
+}
+
 // DELETE:
 // -------
 

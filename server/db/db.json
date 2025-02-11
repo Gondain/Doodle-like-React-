@@ -1,9 +1,9 @@
 [
   {
     "id": "91d627bb3b9b",
-    "name": "Conquer the galaxy",
-    "author": "lucas cloes",
-    "description": "Become the master of the galaxy",
+    "name": "event name",
+    "author": "encore un nom",
+    "description": "nan",
     "dates": [
       "2025-03-10",
       "2025-03-13",
@@ -12,8 +12,8 @@
       "2025-05-03"
     ],
     "created_at": "2025-02-10T15:46:58.848Z",
-    "num_modification": 0,
-    "last_modification": "2025-02-10T15:46:58.848Z",
+    "num_modification": 5,
+    "last_modification": "2025-02-11T11:27:30.648Z",
     "attendees": [
       {
         "name": "Dark vador",

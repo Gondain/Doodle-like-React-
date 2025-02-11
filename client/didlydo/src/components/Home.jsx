@@ -1,14 +1,16 @@
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import {getEvents, deleteEvent} from "../service/api"
 import { useEffect, useState } from "react"
 import Input from "./Input"
 import '../style/Home.css'
 import Checkbox from "./Checkbox"
+
 const Home = () => {
     const[events, setEvents] = useState([])
     const[eventCopy, setEventsCopy] = useState([])
+    const[show, setShow] = useState(false)
 
-    useEffect(() => {
+    useEffect(() => { 
         const grabEvents = async () => {
             try {
                 const response = await getEvents()
@@ -18,7 +20,13 @@ const Home = () => {
             }
         }
         grabEvents()
+        actualisation
     }, [])
+
+    const actualisation = () => {
+        const thisPage = useNavigate()
+        thisPage(0)
+    }
     
     const handleDelete = async (e) => {
         
@@ -36,9 +44,11 @@ const Home = () => {
     const chooseevent = (e) => {
         setEventsCopy(events)
         setEvents(events.filter(elem => elem.name === e.target.value))
+        setShow(true)
     }
 
     const home = () => {
+        setShow(false)
         setEvents(eventCopy)
     }
 
@@ -52,7 +62,7 @@ const Home = () => {
                     <Link to="/Formulaire">
                         <button class="btn btn-primary">Add Event</button>
                     </Link>
-                    <button class="btn btn-primary" onClick={home}>Home</button>
+                    {show && <button class="btn btn-primary" onClick={home}>Home</button>}
                 </div>
                 <form className="form-input">
                     <select class="form-select" onChange={chooseevent}>
@@ -89,6 +99,16 @@ const Home = () => {
                         </div>
                         <div class='row'>
                             <Input class="form" id = {e.id} date={e.dates.map(d => d.date)}/>
+                            <Link 
+                                to="/EditEvent"
+                                state= {{
+                                id: e.id,
+                                name: e.name,
+                                author: e.author,
+                                description: e.description,
+                                }}
+                            ><button class="btn btn-primary">Modify Event</button>
+                            </Link>
                             <button class="btn btn-primary" onClick={() => handleDelete(e)}>Delete Event</button>
                         </div>
                         <hr />
