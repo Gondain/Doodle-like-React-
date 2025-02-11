@@ -89,6 +89,9 @@ const handleAddEvent = async () => {
                 <Link to='/'>
                     <button class="btn btn-primary" onClick={handleAddEvent}>Submit</button>
                 </Link>
+                <Link to='/'>
+                    <button class="btn btn-primary" >Home</button>
+                </Link>
             </form>
         </div>
     )

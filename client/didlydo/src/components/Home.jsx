@@ -99,16 +99,18 @@ const Home = () => {
                         </div>
                         <div class='row'>
                             <Input class="form" id = {e.id} date={e.dates.map(d => d.date)}/>
-                            <Link 
-                                to="/EditEvent"
-                                state= {{
-                                id: e.id,
-                                name: e.name,
-                                author: e.author,
-                                description: e.description,
-                                }}
-                            ><button class="btn btn-primary">Modify Event</button>
-                            </Link>
+                            <div className="menu">
+                                <Link 
+                                    to="/EditEvent"
+                                    state= {{
+                                    id: e.id,
+                                    name: e.name,
+                                    author: e.author,
+                                    description: e.description,
+                                    }}
+                                ><button class="btn btn-primary">Modify Event</button>
+                                </Link>
+                            </div>
                             <button class="btn btn-primary" onClick={() => handleDelete(e)}>Delete Event</button>
                         </div>
                         <hr />
