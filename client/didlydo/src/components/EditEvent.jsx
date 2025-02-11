@@ -75,9 +75,15 @@ const EditFormulaire = () => {
                     placeholder={description}
                 >
                 </textarea>
-                <Link to='/'>
-                    <button class="btn btn-primary" onClick={handleEditEvent}>Submit</button>
-                </Link>
+                <div className="menu">
+                    <Link to='/'>
+                        <button class="btn btn-primary" onClick={handleEditEvent}>Submit</button>
+                    </Link>
+                    <Link to='/'>
+                        <button class="btn btn-primary" >Home</button>
+                    </Link>
+                </div>
+                
             </form>
         </div>
         </>

@@ -85,13 +85,15 @@ const handleAddEvent = async () => {
                     onChange={handleSetDate}/>
                     <table><tr>{dates.map((d => <td>{d}</td>))}</tr></table>
                 </div>
-
-                <Link to='/'>
-                    <button class="btn btn-primary" onClick={handleAddEvent}>Submit</button>
-                </Link>
-                <Link to='/'>
-                    <button class="btn btn-primary" >Home</button>
-                </Link>
+                <div className="menu">
+                    <Link to='/'>
+                        <button class="btn btn-primary" onClick={handleAddEvent}>Submit</button>
+                    </Link>
+                    <Link to='/'>
+                        <button class="btn btn-primary" >Home</button>
+                    </Link>
+                </div>
+                
             </form>
         </div>
     )
